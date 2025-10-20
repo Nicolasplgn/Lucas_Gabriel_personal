@@ -116,32 +116,66 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
 .footer p { margin-top: 20px; color: var(--text-gray); font-size: 0.9rem; }
 
 /* --- RESPONSIVIDADE --- */
+
+/* Ajustes para Telas Médias (Tablets) */
 @media (max-width: 900px) {
-    .about .container { flex-direction: column; text-align: center; }
-    .about-content h2 { text-align: center; }
-    .about-content h2::after { margin: 15px auto 0; }
-    .about-image img { max-width: 80%; }
+    .about .container { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    .about-content h2 { 
+        text-align: center; 
+    }
+    .about-content h2::after { 
+        margin: 15px auto 0; 
+    }
+    .about-image img { 
+        max-width: 80%; 
+    }
 }
 
-/* --- AJUSTES ESPECÍFICOS PARA CELULAR --- */
+/* --- AJUSTES FINAIS PARA CELULAR --- */
 @media (max-width: 768px) {
-    section { padding: 80px 0; }
-    section h2 { font-size: 2rem; }
+    section { 
+        padding: 80px 0; 
+    }
+    section h2 { 
+        font-size: 2rem; 
+    }
 
-    /* CABEÇALHO NO CELULAR */
-    .header { height: 70px; padding: 0; } /* Altura fixa menor para celular */
-    .logo-img { max-height: 55px; } /* Tamanho do logo ajustado para celular */
+    /* CABEÇALHO NO CELULAR (CÓDIGO NOVO E MELHORADO) */
+    .header { 
+        height: auto; /* Altura automática para caber os dois itens */
+        padding: 10px 0;
+    }
+    .header .container { 
+        flex-direction: column; /* Empilha os itens verticalmente */
+        gap: 10px; /* Adiciona um espaço entre o logo e o botão */
+    }
+    .logo-img { 
+        max-height: 50px; /* Um bom tamanho padrão para o logo no celular */
+    }
     .btn-whatsapp { 
-        padding: 8px 15px; /* Botão um pouco menor */
-        font-size: 0.8rem; 
+        padding: 8px 15px; 
+        font-size: 0.9rem; /* Aumenta um pouco a fonte do botão */
     }
 
     /* SEÇÃO HERO NO CELULAR */
-    .hero h1 { font-size: 2.5rem; }
-    .hero p { font-size: 1.2rem; }
+    .hero h1 { 
+        font-size: 2.5rem; 
+    }
+    .hero p { 
+        font-size: 1.2rem; 
+    }
 
     /* OUTROS AJUSTES */
-    .swiper-slide { width: 280px; }
-    .testimonial-highlight { max-width: 100%; } /* Ocupa a largura toda */
-    .final-cta p { font-size: 1.1rem; }
+    .swiper-slide { 
+        width: 280px; 
+    }
+    .testimonial-highlight { 
+        max-width: 95%; /* Ajuste para não colar nas bordas */
+    }
+    .final-cta p { 
+        font-size: 1.1rem; 
+    }
 }
