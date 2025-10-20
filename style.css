@@ -148,10 +148,11 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
         height: auto; /* Altura automática para caber os dois itens */
         padding: 10px 0;
     }
-    .header .container { 
-        flex-direction: column; /* Empilha os itens verticalmente */
-        gap: 10px; /* Adiciona um espaço entre o logo e o botão */
-    }
+   .header .container { 
+    flex-direction: column; /* Empilha os itens verticalmente */
+    gap: 10px; /* Adiciona um espaço entre o logo e o botão */
+    align-items: center; /* FORÇA o alinhamento central horizontal */
+}
     .logo-img { 
         max-height: 50px; /* Um bom tamanho padrão para o logo no celular */
     }
