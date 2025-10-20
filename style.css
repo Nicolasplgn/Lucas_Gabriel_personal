@@ -143,22 +143,41 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
         font-size: 2rem; 
     }
 
-    /* CABEÇALHO NO CELULAR (CÓDIGO NOVO E MELHORADO) */
-    .header { 
-        height: auto; /* Altura automática para caber os dois itens */
-        padding: 10px 0;
+    /* CABEÇALHO NO CELULAR (LAYOUT PROFISSIONAL) */
+    .header {
+        height: 75px; /* Altura fixa para o cabeçalho */
+        padding: 0;
     }
-   .header .container { 
-    flex-direction: column; /* Empilha os itens verticalmente */
-    gap: 10px; /* Adiciona um espaço entre o logo e o botão */
-    align-items: center; /* FORÇA o alinhamento central horizontal */
-}
-    .logo-img { 
-        max-height: 50px; /* Um bom tamanho padrão para o logo no celular */
+    .header .container {
+        flex-direction: row; /* Itens na mesma linha */
+        justify-content: space-between; /* Um em cada ponta */
+        align-items: center; /* Alinhados verticalmente ao centro */
+        height: 100%;
     }
-    .btn-whatsapp { 
-        padding: 8px 15px; 
-        font-size: 0.9rem; /* Aumenta um pouco a fonte do botão */
+    .logo-img {
+        max-height: 45px; /* Tamanho ideal para o logo */
+    }
+    .btn-whatsapp {
+        /* Transforma o botão em um círculo */
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        border-radius: 50%;
+        font-size: 0; /* Esconde o texto */
+        
+        /* Centraliza o ícone dentro do círculo */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn-whatsapp i {
+        /* Mostra e estiliza o ícone do WhatsApp */
+        font-size: 1.8rem;
+        margin: 0;
+    }
+    .btn-whatsapp span {
+        /* Esconde o texto "Fale comigo..." */
+        display: none;
     }
 
     /* SEÇÃO HERO NO CELULAR */
@@ -174,7 +193,7 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
         width: 280px; 
     }
     .testimonial-highlight { 
-        max-width: 95%; /* Ajuste para não colar nas bordas */
+        max-width: 95%;
     }
     .final-cta p { 
         font-size: 1.1rem; 
