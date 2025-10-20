@@ -24,7 +24,7 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
     top: 0; 
     left: 0; 
     z-index: 1000; 
-    background: rgba(34, 34, 34, 0.7);
+    background: rgba(129, 129, 129, 0.139);
     backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px); 
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
@@ -38,7 +38,7 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
 }
 .logo-img { 
     /* AJUSTE FINAL E DEFINITIVO DO TAMANHO */
-    max-height: 130px; /* Aumentei BASTANTE para o efeito ficar bem visível */
+    max-height: 200px; /* Aumentei BASTANTE para o efeito ficar bem visível */
 }
 /* REMOVEMOS O .btn-whatsapp DAQUI */
 
@@ -103,7 +103,7 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
 /* --- RODAPÉ --- */
 .footer { background-color: #000; padding: 40px 0; }
 .footer-logo { 
-    max-height: 80px; /* Aumente ou diminua este valor como desejar */
+    max-height: 150px; /* Aumente ou diminua este valor como desejar */
     margin-bottom: 20px; 
 }
 .footer-contact a { color: var(--white); font-size: 1.8rem; margin: 0 15px; transition: color 0.3s, transform 0.3s; }
@@ -137,20 +137,74 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
 }
 
 /* --- RESPONSIVIDADE --- */
+
+/* Ajustes para Telas Médias (Tablets) */
 @media (max-width: 900px) {
-    .about .container { flex-direction: column; text-align: center; }
-    .about-content h2 { text-align: center; }
-    .about-content h2::after { margin: 15px auto 0; }
-    .about-image img { max-width: 80%; }
+    .about .container { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    .about-content h2 { 
+        text-align: center; 
+    }
+    .about-content h2::after { 
+        margin: 15px auto 0; 
+    }
+    .about-image img { 
+        max-width: 80%; 
+    }
 }
+
+/* --- AJUSTES FINAIS PARA CELULAR (TELA CHEIA) --- */
 @media (max-width: 768px) {
-    section { padding: 80px 0; }
-    section h2 { font-size: 2rem; }
-    /* Ajusta o cabeçalho no celular para centralizar apenas o logo */
-    .header .container { justify-content: center; }
-    .logo-img { max-height: 90px; }
-    /* Ajustes no botão flutuante para celular */
-    .whatsapp-float span { display: none; } /* Esconde o texto "Fale Comigo" */
+    section { 
+        padding: 80px 0; 
+    }
+    section h2 { 
+        font-size: 2rem; 
+    }
+    
+    /* CABEÇALHO NO CELULAR */
+    .header .container { 
+        justify-content: center; 
+    }
+    .logo-img { 
+        max-height: 150px; 
+    }
+
+    /* SEÇÃO HERO NO CELULAR (AJUSTES DE ENQUADRAMENTO) */
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero-content {
+        padding-top: 80px; /* Adiciona um espaço interno para não ficar atrás do header */
+    }
+    .hero h1 { 
+        font-size: 2.2rem; /* Reduzido para caber na tela */
+        margin-bottom: 15px; /* Espaço menor */
+    }
+    .hero p { 
+        font-size: 1.1rem; /* Reduzido para caber na tela */
+        margin-bottom: 30px; /* Espaço menor */
+    }
+
+    /* OUTROS AJUSTES */
+    .swiper-slide { 
+        width: 280px; 
+    }
+    .testimonial-highlight { 
+        max-width: 95%;
+    }
+    .final-cta p { 
+        font-size: 1.1rem; 
+    }
+
+    /* AJUSTES NO BOTÃO FLUTUANTE */
+    .whatsapp-float span {
+        display: none;
+    }
     .whatsapp-float {
         width: 60px;
         height: 60px;
@@ -159,11 +213,7 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
         bottom: 20px;
         right: 20px;
     }
-    .whatsapp-float i { font-size: 2rem; }
-
-    .hero h1 { font-size: 2.5rem; }
-    .hero p { font-size: 1.2rem; }
-    .swiper-slide { width: 280px; }
-    .testimonial-highlight { max-width: 95%; }
-    .final-cta p { font-size: 1.1rem; }
+    .whatsapp-float i {
+        font-size: 2rem;
+    }
 }
