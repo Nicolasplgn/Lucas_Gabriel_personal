@@ -11,13 +11,14 @@
 body { background-color: var(--dark-bg); color: var(--white); overflow-x: hidden; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 section { padding: 100px 0; text-align: center; position: relative; }
-section h2 { font-size: 2.8rem; margin-bottom: 20px; text-transform: uppercase; }
+section h2 { font-size: 2.8rem; margin-bottom: 50px; text-transform: uppercase; }
 section h2::after { content: ''; display: block; width: 80px; height: 4px; background-color: var(--gold); margin: 15px auto 0; }
-.section-subtitle { font-size: 1.2rem; color: var(--text-gray); max-width: 700px; margin: -10px auto 50px auto; }
+.section-subtitle { font-size: 1.2rem; color: var(--text-gray); max-width: 700px; margin: 50px auto 0 auto; }
+.method .section-subtitle, .testimonials .section-subtitle { margin: -10px auto 50px auto; }
 .btn-main { background-color: var(--gold); color: #000; padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: 700; font-size: 1.1rem; text-transform: uppercase; transition: all 0.3s ease; display: inline-block; border: 2px solid var(--gold); box-shadow: 0 0 10px rgba(191, 161, 0, 0); }
 .btn-main:hover { transform: translateY(-5px); box-shadow: 0 0 25px rgba(191, 161, 0, 0.7); }
 
-/* --- CABEÇALHO --- */
+/* ========= CABEÇALHO MODIFICADO PARA CENTRALIZAR A LOGO ========= */
 .header { 
     position: fixed; 
     width: 100%; 
@@ -31,13 +32,20 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
     padding: 5px 0;
 }
 .header .container { 
+    position: relative; /* Necessário para o posicionamento absoluto da logo */
     display: flex; 
-    justify-content: space-between;
+    justify-content: flex-end; /* Alinha o conteúdo (o botão) à direita */
     align-items: center; 
     height: 80px;
 }
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* O truque para centralização perfeita */
+}
 .logo-img { 
-    max-height: 190px;
+    max-height: 160px;
 }
 .btn-whatsapp {
     background-color: transparent;
@@ -55,6 +63,8 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
     background-color: var(--gold);
     color: #000;
 }
+/* ========= FIM DA MODIFICAÇÃO DO CABEÇALHO ========= */
+
 
 /* --- HERO SECTION --- */
 .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 100px; position: relative; }
@@ -78,9 +88,9 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
 /* --- SEÇÃO PROBLEMAS --- */
 .problems { background-color: #1a1a1a; }
 .problem-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-.card { background: linear-gradient(145deg, #222, #1c1c1c); padding: 30px 20px; border-radius: 10px; border-top: 4px solid var(--gold); transition: transform 0.3s, box-shadow 0.3s; }
-.card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-.card i { font-size: 3rem; color: var(--gold); margin-bottom: 15px; }
+.card { background: #222; padding: 30px 20px; border-radius: 10px; border-top: 4px solid var(--gold); transition: transform 0.3s, box-shadow 0.3s; text-align: left; }
+.card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.card i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
 .card h3 { font-size: 1.4rem; margin-bottom: 10px; }
 .card p { color: var(--text-gray); font-size: 1rem; }
 
@@ -103,39 +113,14 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
 .results .swiper-pagination-bullet-active { background-color: var(--gold) !important; }
 
 /* --- SEÇÃO DEPOIMENTOS (COM IMAGENS) --- */
-.testimonials { 
-    background-color: #161616; 
-    padding-bottom: 120px;
-}
-.testimonial-swiper {
-    padding: 40px 0 60px 0;
-}
-.testimonial-swiper .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent; /* Fundo do slide transparente */
-    height: auto; /* Altura se ajusta ao conteúdo */
-}
-.testimonial-swiper .swiper-slide img {
-    display: block;
-    max-width: 100%;
-    max-height: 550px; /* Altura máxima para a imagem */
-    width: auto;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
+.testimonials { background-color: #161616; padding-bottom: 120px; }
+.testimonial-swiper { padding: 40px 0 60px 0; }
+.testimonial-swiper .swiper-slide { display: flex; justify-content: center; align-items: center; background: transparent; height: auto; }
+.testimonial-swiper .swiper-slide img { display: block; max-width: 100%; max-height: 550px; width: auto; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
 .testimonial-swiper .swiper-button-prev,
-.testimonial-swiper .swiper-button-next {
-    color: var(--gold) !important;
-}
-.testimonial-swiper .swiper-pagination-bullet-active {
-    background: var(--gold) !important;
-}
-.testimonial-swiper .swiper-pagination-bullet {
-    background: var(--white) !important;
-}
+.testimonial-swiper .swiper-button-next { color: var(--gold) !important; }
+.testimonial-swiper .swiper-pagination-bullet-active { background: var(--gold) !important; }
+.testimonial-swiper .swiper-pagination-bullet { background: var(--white) !important; }
 
 /* --- CHAMADA FINAL --- */
 .final-cta { background: linear-gradient(45deg, var(--gold), #d4b400); color: #000; }
@@ -147,7 +132,7 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
 
 /* --- RODAPÉ --- */
 .footer { background-color: #000; padding: 40px 0; }
-.footer-logo {background-position: center; max-height: 130px; margin-bottom: 20px; }
+.footer-logo { max-height: 150px; margin-bottom: 20px; }
 .footer-contact a { color: var(--white); font-size: 1.8rem; margin: 0 15px; transition: color 0.3s, transform 0.3s; }
 .footer-contact a:hover { color: var(--gold); transform: translateY(-5px); }
 .footer p { margin-top: 20px; color: var(--text-gray); font-size: 0.9rem; }
@@ -185,9 +170,15 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
     section { padding: 80px 15px; }
     section h2 { font-size: 2rem; }
     
-    .header .container { justify-content: space-between; padding: 0 15px;}
-    .logo-img { max-height: 170px; }
-    .btn-whatsapp { display: none; }
+    .header .container { justify-content: center; padding: 0 15px;}
+    .logo-img { max-height: 180px; }
+    .btn-whatsapp { display: none; } /* Botão some no mobile, logo centraliza automaticamente */
+
+    /* Quando o botão some, a logo já fica centralizada pelo 'justify-content: center' no container */
+    .logo {
+        position: static; /* Remove o posicionamento absoluto no mobile */
+        transform: none; /* Remove a transformação */
+    }
 
     .hero { text-align: center; }
     .hero-content { padding-top: 80px; }
