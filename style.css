@@ -14,7 +14,7 @@ section { padding: 100px 0; text-align: center; position: relative; }
 section h2 { font-size: 2.8rem; margin-bottom: 50px; text-transform: uppercase; }
 section h2::after { content: ''; display: block; width: 80px; height: 4px; background-color: var(--gold); margin: 15px auto 0; }
 .section-subtitle { font-size: 1.2rem; color: var(--text-gray); max-width: 700px; margin: 50px auto 0 auto; }
-.method .section-subtitle, .testimonials .section-subtitle { margin: -10px auto 50px auto; }
+.method .section-subtitle, .testimonials .section-subtitle, .plans .section-subtitle { margin: -10px auto 50px auto; }
 .btn-main { background-color: var(--gold); color: #000; padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: 700; font-size: 1.1rem; text-transform: uppercase; transition: all 0.3s ease; display: inline-block; border: 2px solid var(--gold); box-shadow: 0 0 10px rgba(191, 161, 0, 0); }
 .btn-main:hover { transform: translateY(-5px); box-shadow: 0 0 25px rgba(191, 161, 0, 0.7); }
 
@@ -32,17 +32,10 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
     padding: 5px 0;
 }
 .header .container { 
-    position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     height: 80px;
-}
-.logo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
 .logo-img { 
     max-height: 190px;
@@ -65,9 +58,9 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
 }
 
 /* --- HERO SECTION --- */
-.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; }
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 100px; position: relative; }
 #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
-.hero-content { position: relative; z-index: 2; max-width: 800px; padding-top: 90px; padding-bottom: 20px; }
+.hero-content { position: relative; z-index: 2; max-width: 800px; }
 .hero h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
 .hero .highlight { color: var(--gold); }
 .hero p { font-size: 1.5rem; color: var(--text-gray); margin-bottom: 40px; }
@@ -202,10 +195,8 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
 }
 
 @media (max-width: 768px) {
-    section { padding: 70px 15px; }
-    .results, .testimonials { padding-bottom: 80px; }
-    section h2 { font-size: 2.2rem; margin-bottom: 40px; }
-    
+    section { padding: 80px 15px; }
+    section h2 { font-size: 2rem; }
     .header .container { justify-content: center; padding: 0 15px;}
     .logo-img { max-height: 150px; }
     .btn-whatsapp { display: none; }
@@ -213,10 +204,50 @@ section h2::after { content: ''; display: block; width: 80px; height: 4px; backg
         position: static;
         transform: none;
     }
-
     .hero-content { padding-top: 80px; }
     .hero h1 { font-size: 2.5rem; }
     .hero p { font-size: 1.2rem; }
     .results .swiper-slide { width: 280px; }
     .final-cta p { font-size: 1.1rem; }
 }
+
+/* ========= ADIÇÃO DOS ESTILOS PARA OS PLANOS (sem alterar o resto) ========= */
+.plans { background-color: #1a1a1a; }
+.plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; align-items: flex-start; margin-top: 50px;}
+.plan-card {
+    background-color: #222; color: var(--white); padding: 30px; border-radius: 10px;
+    border: 2px solid #333; transition: all 0.3s ease; position: relative;
+    display: flex; flex-direction: column; height: 100%;
+}
+.plan-card:hover { transform: translateY(-10px); border-color: var(--gold); }
+.plan-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 5px; color: var(--white); }
+.plan-subtitle { color: var(--text-gray); font-weight: 400; margin-bottom: 25px; min-height: 40px; }
+.plan-price { font-size: 3rem; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
+.plan-price .currency { font-size: 1.3rem; vertical-align: super; margin-right: 5px; }
+.plan-price .cents, .plan-price .period, .plan-price .installments { font-size: 1rem; font-weight: 600; color: var(--text-gray); }
+.plan-total { color: var(--text-gray); margin-bottom: 25px; font-size: 0.9rem; }
+.plan-bonus {
+    margin: auto 0 30px 0; color: var(--text-gray); font-weight: 600; font-size: 0.9rem;
+    border-top: 1px solid #333; padding-top: 20px; margin-top: 20px;
+}
+.plan-bonus i { color: var(--gold); margin-right: 8px; }
+.btn-plan {
+    background-color: var(--gold); color: #000; text-decoration: none; padding: 15px; width: 100%;
+    border-radius: 5px; font-weight: 700; text-transform: uppercase; transition: all 0.3s ease;
+    border: 2px solid var(--gold); display: block; margin-top: auto;
+}
+.btn-plan:hover { background-color: #111; color: var(--gold); border-color: #111; }
+.plan-card.popular {
+    transform: scale(1.05); border: 2px solid var(--gold);
+}
+.popular-tag {
+    position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+    background-color: var(--gold); color: #000; padding: 5px 20px;
+    border-radius: 20px; font-weight: 700; font-size: 0.9rem;
+}
+@media (max-width: 992px) {
+    .plan-card.popular {
+        transform: scale(1);
+    }
+}
+/* ========= FIM DA ADIÇÃO DOS ESTILOS DOS PLANOS ========= */
